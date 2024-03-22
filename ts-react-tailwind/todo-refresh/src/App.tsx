@@ -1,8 +1,7 @@
 import { useState } from "react";
-import TodoItem from "./components/TodoItem";
-import { dummyData } from "./data/todos";
 import { AddTodoForm } from "./components/AddTodoForm";
 import { TodoList } from "./components/TodoList";
+import { dummyData } from "./data/todos";
 
 function App() {
     const [todos, setTodos] = useState(dummyData);
@@ -31,7 +30,7 @@ function App() {
     };
 
     return (
-        <main className="py-10 h-screen space-y-5">
+        <main className="py-10 h-screen space-y-5 overflow-y-auto">
             <h1 className="font-bold text-center text-3xl">Todo</h1>
             <div className="max-w-lg mx-auto bg-slate-100 rounded-md p-5 space-y-6">
                 <AddTodoForm onSubmit={addTodo} />
